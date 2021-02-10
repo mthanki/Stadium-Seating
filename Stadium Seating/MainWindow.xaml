@@ -1,0 +1,90 @@
+﻿<Window x:Class="Stadium_Seating.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stadium_Seating"
+        mc:Ignorable="d"
+        Title="Stadium Seating" ResizeMode="NoResize" Height="450" Width="800">
+    <Grid Background="#3E3E3E">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Viewbox Stretch="Uniform" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center">
+            <Label Width="465" Background="#161616" Foreground="White" Content="Please enter the number of tickets sold" HorizontalContentAlignment="Center" FontFamily="Cambria"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Class A" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Class B" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Class C" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Total Income From sales Class A" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Total Income From sales Class B" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Total Income From sales Class C" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <TextBox FontFamily="Cambria" Name="ClassAticketsBox" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <TextBox FontFamily="Cambria" Name="ClassBticketsBox" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <TextBox FontFamily="Cambria" Name="ClassCticketsBox" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></TextBox>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <Label FontFamily="Cambria" Foreground="LightGreen" Content="$" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                <Label FontFamily="Cambria" Foreground="LightGreen" Name="ClassAticketsTotalIncome" Content="0" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"></Label>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <Label FontFamily="Cambria" Foreground="LightGreen" Content="$" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"></Label>
+                <Label FontFamily="Cambria" Foreground="LightGreen" Name="ClassBticketsTotalIncome" Content="0" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"></Label>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <Label FontFamily="Cambria" Foreground="LightGreen" Content="$" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"></Label>
+                <Label FontFamily="Cambria" Foreground="LightGreen" Name="ClassCticketsTotalIncome" Content="0" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"></Label>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <Label FontFamily="Cambria" Width="220" Background="#161616" Foreground="White" Content="Total Income From All ticket sales" HorizontalContentAlignment="Center"></Label>
+        </Viewbox>
+        <Viewbox Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="1" HorizontalAlignment="Left">
+            <StackPanel Orientation="Horizontal">
+                <Label FontFamily="Cambria" Foreground="LightGreen" Content="$" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+                <Label FontFamily="Cambria" Foreground="LightGreen" FontWeight="Bold" Content="0" Name="TotalTicketsIncome" MinWidth="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"></Label>
+            </StackPanel>
+        </Viewbox>
+        <Button FontFamily="Cambria" Cursor="Hand" Name="CalculateTotalIncome" Background="#187DD9" Foreground="White" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Margin="5" FontSize="23" Click="CalculateTotalIncome_Click">Calculate Total Income</Button>
+    </Grid>
+</Window>
