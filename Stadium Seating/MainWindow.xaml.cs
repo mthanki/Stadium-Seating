@@ -29,23 +29,48 @@ namespace Stadium_Seating
             InitializeComponent();
         }
 
+        private void ApplyErrorStyle()
+        {
+            ClassAticketsBox.BorderBrush = Brushes.Red;
+            ClassBticketsBox.BorderBrush = Brushes.Red;
+            ClassCticketsBox.BorderBrush = Brushes.Red;
+        }
+
+        private void ResetToMainStyle()
+        {
+            ClassAticketsBox.BorderBrush = new SolidColorBrush(Color.FromArgb(100, 171, 173, 179));
+            ClassBticketsBox.BorderBrush = new SolidColorBrush(Color.FromArgb(100, 171, 173, 179));
+            ClassCticketsBox.BorderBrush = new SolidColorBrush(Color.FromArgb(100, 171, 173, 179));
+        }
+
         private void CalculateTotalIncome_Click(object sender, RoutedEventArgs e)
         {
-            decimal NumberOfClassATicketsSold = int.Parse(ClassAticketsBox.Text);
-            decimal NumberOfClassBTicketsSold = int.Parse(ClassBticketsBox.Text);
-            decimal NumberOfClassCTicketsSold = int.Parse(ClassCticketsBox.Text);
+            ResetToMainStyle();
+            try
+            {
+                decimal NumberOfClassATicketsSold = int.Parse(ClassAticketsBox.Text);
+                decimal NumberOfClassBTicketsSold = int.Parse(ClassBticketsBox.Text);
+                decimal NumberOfClassCTicketsSold = int.Parse(ClassCticketsBox.Text);
 
-            decimal TotalIncomeFromClassAsales = NumberOfClassATicketsSold * CLASS_A_COST;
-            decimal TotalIncomeFromClassBsales = NumberOfClassBTicketsSold * CLASS_B_COST;
-            decimal TotalIncomeFromClassCsales = NumberOfClassCTicketsSold * CLASS_C_COST;
+                decimal TotalIncomeFromClassAsales = NumberOfClassATicketsSold * CLASS_A_COST;
+                decimal TotalIncomeFromClassBsales = NumberOfClassBTicketsSold * CLASS_B_COST;
+                decimal TotalIncomeFromClassCsales = NumberOfClassCTicketsSold * CLASS_C_COST;
 
-            decimal TotalIncomeFromAllSales = TotalIncomeFromClassAsales + TotalIncomeFromClassBsales + TotalIncomeFromClassCsales;
+                decimal TotalIncomeFromAllSales = TotalIncomeFromClassAsales + TotalIncomeFromClassBsales + TotalIncomeFromClassCsales;
 
-            ClassAticketsTotalIncome.Content = TotalIncomeFromClassAsales;
-            ClassBticketsTotalIncome.Content = TotalIncomeFromClassBsales;
-            ClassCticketsTotalIncome.Content = TotalIncomeFromClassCsales;
+                ClassAticketsTotalIncome.Content = TotalIncomeFromClassAsales;
+                ClassBticketsTotalIncome.Content = TotalIncomeFromClassBsales;
+                ClassCticketsTotalIncome.Content = TotalIncomeFromClassCsales;
 
-            TotalTicketsIncome.Content = TotalIncomeFromAllSales;
+                TotalTicketsIncome.Content = TotalIncomeFromAllSales;
+            }
+            catch
+            {
+                Error E = new Error();
+                E.Show();
+            }
+
+
         }
     }
 }
